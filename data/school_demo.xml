@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    
+        <record id="randiglenn_school_teacher" model="school.teacher">
+            <field name="name">Randi Glenn</field>
+            <field name="nip">00001</field>
+            <field name="street">Jl. Lorem ipsum dolor asmet No. 33</field>
+            <field name="city">Kota Tangerang Selatan</field>
+            <field name="country_id" ref="base.id"/>
+            <field name="state_id" ref="base.state_id_yo"/>
+            <field name="zip">90241</field>
+            <field name="email">randiglenn@rockabye.com</field>
+            <field name="phone">+62 (986) 549-2456</field>
+        </record>
+
+        <record id="elvavelazquez_school_teacher" model="school.teacher">
+            <field name="name">Elva Velazquez</field>
+            <field name="nip">00002</field>
+            <field name="street">Jl. Lorem ipsum dolor asmet No. 33</field>
+            <field name="city">Kota Tangerang Selatan</field>
+            <field name="country_id" ref="base.id"/>
+            <field name="state_id" ref="base.state_id_yo"/>
+            <field name="zip">90241</field>
+            <field name="email">elvavelazquez@rockabye.com</field>
+            <field name="phone">+62 (895) 495-3985</field>
+        </record>
+
+        <record id="nolahawkins_school_teacher" model="school.teacher">
+            <field name="name">Nola Hawkins</field>
+            <field name="nip">00003</field>
+            <field name="street">Jl. Lorem ipsum dolor asmet No. 33</field>
+            <field name="city">Kota Tangerang Selatan</field>
+            <field name="country_id" ref="base.id"/>
+            <field name="state_id" ref="base.state_id_yo"/>
+            <field name="zip">90241</field>
+            <field name="email">nolahawkins@rockabye.com</field>
+            <field name="phone">+62 (966) 549-2456</field>
+        </record>
+
+        <record id="vii_a_school_classroom" model="school.classroom">
+            <field name="name">VII A</field>
+            <field name="teacher_id" ref="randiglenn_school_teacher"/>
+            <field name="teacher_ids" eval="[
+                Command.clear(),
+                Command.link(ref('elvavelazquez_school_teacher')),
+                Command.link(ref('nolahawkins_school_teacher')),
+            ]"/>
+            <field name="student_ids" eval="[
+                Command.clear(),
+                Command.create({'name': 'Brown Gallagher',      'nis': '33278'}),
+                Command.create({'name': 'Suarez Lee',           'nis': '93380'}),
+                Command.create({'name': 'Baird Blankenship',    'nis': '10497'}),
+                Command.create({'name': 'Mcdonald Sharp',       'nis': '69099'}),
+                Command.create({'name': 'Nash Schwartz',        'nis': '68977'}),
+                Command.create({'name': 'Alta Grant',           'nis': '53609'}),
+                Command.create({'name': 'Vonda Butler',         'nis': '37390'}),
+                Command.create({'name': 'Dunlap Randall',       'nis': '39690'}),
+                Command.create({'name': 'Jordan Miles',         'nis': '52216'}),
+                Command.create({'name': 'Hammond Acevedo',      'nis': '61467'})
+            ]"/>
+        </record>
+
+        <record id="vii_b_school_classroom" model="school.classroom">
+            <field name="name">VII B</field>
+            <field name="teacher_id" ref="nolahawkins_school_teacher"/>
+            <field name="teacher_ids" eval="[
+                Command.clear(),
+                Command.link(ref('elvavelazquez_school_teacher')),
+                Command.link(ref('randiglenn_school_teacher')),
+            ]"/>
+            <field name="student_ids" eval="[
+                Command.clear(),
+                Command.create({'name': 'Deana Rich',         'nis': '39137'}),
+                Command.create({'name': 'Gertrude Stuart',    'nis': '27527'}),
+                Command.create({'name': 'Judith Dorsey',      'nis': '35645'}),
+                Command.create({'name': 'Chan Hurst',         'nis': '39519'}),
+                Command.create({'name': 'Pittman Carpenter',  'nis': '46590'}),
+                Command.create({'name': 'Karina Miller',      'nis': '80281'}),
+                Command.create({'name': 'Etta Lindsay',       'nis': '86644'}),
+                Command.create({'name': 'Britt Rutledge',     'nis': '91004'}),
+                Command.create({'name': 'Mollie Hogan',       'nis': '83074'}),
+                Command.create({'name': 'Lorene Vincent',     'nis': '77538'})
+            ]"/>
+        </record>
+    
+    </data>
+    
+</odoo>
